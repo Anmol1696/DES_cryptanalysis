@@ -1,2 +1,2 @@
 # DES_cryptanalysis
-Various techniques for cryptanalysis
+Implementation of various techniques for cryptanalysis of different versions of DES
