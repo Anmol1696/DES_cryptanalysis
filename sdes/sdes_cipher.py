@@ -1,4 +1,5 @@
 from round_keys import RoundKeys
+from time import time
 
 IP1     = [1, 5, 2, 0, 3, 7, 4, 6]
 inv_IP1 = [3, 0, 2, 4, 6, 1, 7, 5]
@@ -122,7 +123,13 @@ def main(text, key, encrypt):
     return sdes
 
 if __name__ == "__main__":
-    plain_text = '00011010'
-    key        = '0110110101'
+    plain_text = '11001001'
+    key        = '1000101010'
+
+    start = time()
 
     sdes = main(plain_text, key, True)
+
+    stop  = time()
+    print 'Cipher Text -> ', sdes.cipher_text
+    print 'Time -> ', (stop - start)/2**10
