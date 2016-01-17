@@ -18,7 +18,7 @@ class RoundKeys:
             Perform the first permutation to output C0 and D0
             C0 is the left side of the key and the D0 is the right side
         """
-        C0, D0 = ''.join([key[i] for i in PC_1[0]]), ''.join([key[i] for i in PC_1[1]])
+        C0, D0 = ''.join([self.str_key[i] for i in PC_1[0]]), ''.join([self.str_key[i] for i in PC_1[1]])
 
         return (C0, D0)
 
