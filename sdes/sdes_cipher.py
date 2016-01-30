@@ -1,11 +1,15 @@
 from round_keys import RoundKeys
 from time import time
 
-IP1     = [1, 5, 2, 0, 3, 7, 4, 6]
-inv_IP1 = [3, 0, 2, 4, 6, 1, 7, 5]
+#IP1     = [1, 5, 2, 0, 3, 7, 4, 6]
+IP1     = [7, 6, 4, 0, 2, 5, 1, 3] 
+#inv_IP1 = [3, 0, 2, 4, 6, 1, 7, 5]
+inv_IP1 = [3, 6, 4, 7, 2, 5, 1, 0]
+
 E       = [3, 0, 1, 2, 1, 2, 3, 0]
 P       = [1, 3, 2, 0]
 
+'''
 SBox    = [[[1, 0, 3, 2], 
             [3, 2, 1, 0],
             [0, 2, 1, 3],
@@ -14,6 +18,17 @@ SBox    = [[[1, 0, 3, 2],
            [2, 0, 1, 3],
            [3, 0, 1, 0],
            [2, 1, 0, 3]]]
+'''
+
+SBox    = [[[1, 0, 2, 3], 
+            [3, 1, 0, 2],
+            [2, 0, 3, 1],
+            [1, 3, 2, 0]],
+          [[0, 3, 1, 2],
+           [3, 2, 0, 1],
+           [1, 0, 3, 2],
+           [2, 1, 3, 0]]]
+
 
 class SDES:
     """
@@ -132,4 +147,5 @@ if __name__ == "__main__":
 
     stop  = time()
     print 'Cipher Text -> ', sdes.cipher_text
-    print 'Time -> ', (stop - start)/2**10
+    print 'Plain Text -> ', sdes.plain_text
+    print 'Time -> ', (stop - start)
